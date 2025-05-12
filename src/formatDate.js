@@ -31,7 +31,7 @@ function formatDate(date, fromFormat, toFormat) {
         result += TO_DATE[key] + TO_DATE_MARK;
       } else if (key === 'YYYY' && fkey === 'YY') {
         TO_DATE[key] =
-          FROM_DATE[fkey] < 30
+          Number(FROM_DATE[fkey]) < 30
             ? '20' + FROM_DATE[fkey]
             : '19' + FROM_DATE[fkey];
 
